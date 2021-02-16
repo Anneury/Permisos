@@ -64,7 +64,7 @@ namespace Registro_Roles
             {
                 if (!ExisteEnLaBaseDeDatos())
                 {
-                    MessageBox.Show("No se puede modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se pudo modificar", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 paso = RolesBLL.Modificar(rol);
@@ -73,11 +73,11 @@ namespace Registro_Roles
             if (paso)
             {
                 Limpiar();
-                MessageBox.Show("Guardado!!", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Guardado!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No fue posible guardar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,12 +126,12 @@ namespace Registro_Roles
 
             if(rol != null)
             {
-                MessageBox.Show("Rol encontrado");
+                MessageBox.Show("Permiso encontrado","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 LlenaCampo(rol);
             }
             else
             {
-                MessageBox.Show("Rol no encontrado");
+                MessageBox.Show("Permiso no encontrado","Fatal",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
             }
         }
 
